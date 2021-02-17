@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'firstapp.apps.FirstappConfig',
     'wordcount.apps.WordcountConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
