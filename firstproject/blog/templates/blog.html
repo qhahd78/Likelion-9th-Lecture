@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 메인 페이지 입니다. </title>
+</head>
+<body>
+    <h1>ㅎㅇ</h1>
+    {% for blog in blogs %}
+    <h1>{{blog.title}}</h1>
+    <p>{{blog.id}}</p>
+    <p>{{blog.writer}}</p>
+    <p>{{blog.pub_date}}</p>
+    <a href = "{% url 'detail' blog.id %}">
+        <p>{{blog.summary}}</p>
+    </a>
+    
+
+    {% endfor %}
+    
+</body>
+</html>
