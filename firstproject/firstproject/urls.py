@@ -19,6 +19,7 @@ from firstapp import views as first
 from wordcount import views as wc
 from blog import views as blog
 
+# 패스 컨버터를 통해 id 를 받아온다. 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +30,6 @@ urlpatterns = [
     path ('blog/', blog.blog, name="blog"),
     path('blog/<str:id>', blog.detail, name="detail"),
     path('blog/new/', blog.new, name="new"),
-    path('blog/create/', blog.create, name="create")
+    path('blog/create/', blog.create, name="create"),
+    path('blog/edit/<str:id>', blog.edit, name="edit")
 ]

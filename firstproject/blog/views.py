@@ -17,6 +17,8 @@ def detail(request, id) :
 def new(request) : 
     return render(request, 'new.html')
 
+# 정보 받으면 create 함수를 통해 새로운 블로그 객체를 만들고 이를 저장함. 
+# 디테일 페이지로 리다이렉트 시킨다. 
 def create(request) : 
     new_blog = Blog()
 
@@ -28,3 +30,7 @@ def create(request) :
     new_blog.save()
 
     return redirect('detail', new_blog.id)
+
+def edit(request, id) : 
+    edit_blog = Blog.objects.get(id=id)
+    return render(request, 'edit.html', {'blog': edit_blog})
