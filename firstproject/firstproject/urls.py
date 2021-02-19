@@ -27,5 +27,7 @@ urlpatterns = [
     path('wc/', wc.home, name="wc"),
     path('wc/result', wc.result, name="result"),
     path ('blog/', blog.blog, name="blog"),
-    path('blog/<str:id>', blog.detail, name="detail")
+    path('blog/<str:id>', blog.detail, name="detail"),
+    path('blog/new/', blog.new, name="new"),
+    path('blog/create/', blog.create, name="create")
 ]
