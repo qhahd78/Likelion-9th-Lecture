@@ -32,5 +32,6 @@ urlpatterns = [
     path('blog/new/', blog.new, name="new"),
     path('blog/create/', blog.create, name="create"),
     path('blog/edit/<str:id>', blog.edit, name="edit"),
-    path('update/<str:id>', blog.update, name="update")
+    path('blog/update/<str:id>', blog.update, name="update"),
+    path('blog/delete/<str:id>', blog.delete, name="delete")
 ]
