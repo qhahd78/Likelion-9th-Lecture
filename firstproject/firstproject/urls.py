@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from firstapp import views as first
 from wordcount import views as wc
-from blog import home
+from blog import views
 
 # 패스 컨버터를 통해 id 를 받아온다. 
 
