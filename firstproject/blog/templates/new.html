@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>블로그 글 생성</title>
-</head>
-<body>
+{% extends 'base.html' %}
+    {% block title %}<title>블로그 글 생성</title>{% endblock %}
     <!-- 버튼 누르면 create 로 정보 보내기  -->
+
+    {% block content %}
     <form action="{% url 'create'%}" method="POST">
         {%csrf_token%}
         제목: <input name="title" type="text" placeholder="제목을 입력해주세요">
@@ -16,6 +11,4 @@
 
         <button>등록</button>
     </form>
-    
-</body>
-</html>
+    {% endblock %}

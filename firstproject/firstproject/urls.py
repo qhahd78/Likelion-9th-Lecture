@@ -14,10 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from firstapp import views as first
 from wordcount import views as wc
-from blog import views as blog
+from blog import home
 
 # 패스 컨버터를 통해 id 를 받아온다. 
 
@@ -27,11 +27,5 @@ urlpatterns = [
     path('hello/', first.hello, name="hello"),
     path('wc/', wc.home, name="wc"),
     path('wc/result', wc.result, name="result"),
-    path ('blog/', blog.blog, name="blog"),
-    path('blog/<str:id>', blog.detail, name="detail"),
-    path('blog/new/', blog.new, name="new"),
-    path('blog/create/', blog.create, name="create"),
-    path('blog/edit/<str:id>', blog.edit, name="edit"),
-    path('blog/update/<str:id>', blog.update, name="update"),
-    path('blog/delete/<str:id>', blog.delete, name="delete")
+    path('blog/', include('blog.urls'))
 ]
