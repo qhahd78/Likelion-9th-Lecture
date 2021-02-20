@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from firstapp import views as first
-from wordcount import views as wc
+from wordcount import views
 from blog import views
 
 # 패스 컨버터를 통해 id 를 받아온다. 
@@ -25,7 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', first.welcome, name="welcome"),
     path('hello/', first.hello, name="hello"),
-    path('wc/', wc.home, name="wc"),
-    path('wc/result', wc.result, name="result"),
+    path('wordcount/', include('wordcount.urls')),
     path('blog/', include('blog.urls'))
 ]
