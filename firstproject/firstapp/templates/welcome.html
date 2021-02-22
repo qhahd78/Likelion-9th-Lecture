@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}<title>main</title>{% endblock %}
+
+{% block content %}
     <div style="text-align: center;">
         <h1>사용자 이름을 입력하세요.</h1>
         <br>
@@ -18,8 +15,10 @@
             <button>wordcount 로 이동</button>
         </a>
         <a href="blog">
-            <button>블로그로 이동</button>
+            <button> 블로그로 이동 </button>
+        </a>
+        <a href="portfolio">
+            <input type="button" value = "포폴로 이동">
         </a>
     </div>
-</body>
-</html>
+{% endblock %}

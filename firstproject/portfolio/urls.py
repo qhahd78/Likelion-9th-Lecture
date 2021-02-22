@@ -6,6 +6,10 @@ from .views import *
 
 urlpatterns = [
     path('', portfolio, name="portfolio"),
-    path('create/', create, name="create"),
+    path('pofol_create/', pofol_create, name="pofol_create"),
     path('model_create/', model_create, name="model_create"),
+    path('pofol_detail/<str:id>', pofol_detail, name="pofol_detail"),
+    path('pofol_edit/<str:id>', pofol_edit, name="pofol_edit"),
+    path('model_edit/<str:id>', model_edit, name="model_edit"),
+    path('pofol_del/<str:id>', pofol_del, name="pofol_del"),
 ]
