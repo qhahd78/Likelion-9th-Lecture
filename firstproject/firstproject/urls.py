@@ -18,6 +18,7 @@ from django.urls import path, include
 from firstapp import views as first
 from wordcount import views
 from blog import views
+from portfolio import views
 
 # 패스 컨버터를 통해 id 를 받아온다. 
 
@@ -26,5 +27,6 @@ urlpatterns = [
     path('', first.welcome, name="welcome"),
     path('hello/', first.hello, name="hello"),
     path('wordcount/', include('wordcount.urls')),
-    path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')),
+    path('portfolio/', include('portfolio.urls'))
 ]
