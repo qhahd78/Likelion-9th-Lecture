@@ -19,6 +19,8 @@ from firstapp import views as first
 from wordcount import views
 from blog import views
 from portfolio import views
+from django.conf import settings 
+from django.conf.urls.static import static 
 
 # 패스 컨버터를 통해 id 를 받아온다. 
 
@@ -28,5 +30,5 @@ urlpatterns = [
     path('hello/', first.hello, name="hello"),
     path('wordcount/', include('wordcount.urls')),
     path('blog/', include('blog.urls')),
-    path('portfolio/', include('portfolio.urls'))
-]
+    path('portfolio/', include('portfolio.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
