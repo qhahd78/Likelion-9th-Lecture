@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    {% block title %}<title>블로그 글 수정</title>{% endblock %}
+{% block content %}
+    <!-- 버튼 누르면 update 로 정보 보내기  -->
+    <!-- 매개변수 blog.id 와 같이 보냄  -->
+    <form action="{% url 'update' blog.id %}" method="POST">
+        {%csrf_token%}
+        제목: <input name="title" value = "{{blog.title}}" type="text" placeholder="제목을 입력해주세요">
+        작성자: <input name="writer" value = "{{blog.writer}} "type="text" placeholder="제목을 입력해주세요">
+        내용: <input name="body" value="{{blog.body}}" type="textarea" placeholder="제목을 입력해주세요">
+
+        <button>등록</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+    {% block title %}<title>portfolio</title>{% endblock %}
+{% block content %}
+    <h1>포폴 페이지다</h1>
+    <a href="pofol_create">
+        <p>포폴 추가하기</p>
+    </a>
+    {% for pofol in pofols %}
+        <h1>{{pofol.title}}</h1>
+        <p><img height="100px" width="100px" src= "{{pofol.image.url}}"></p>
+        <a href = "{% url 'pofol_detail' pofol.id %}">
+            <p>{{pofol.body}}</p>
+        </a>
+        <p>{{pofol.pub_date}}</p>
+    {% endfor %}    
+{% endblock %}

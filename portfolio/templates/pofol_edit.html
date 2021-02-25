@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}<title>portfolio create</title>{% endblock %}
+
+{% block content %}
+    <h1>포폴 수정 페이지다</h1>
+    <form action="{% url 'model_edit' pofol.id %}" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+        <p>
+            <input name="title" type="text" value="{{pofol.title}}">
+            <input name="body" type="text" value="{{pofol.body}}">
+            <input name="image" type="file">
+        </p>
+        <input type="submit" value="포폴 적기">
+    </form>
+{% endblock %}
