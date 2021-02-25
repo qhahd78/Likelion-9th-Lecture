@@ -17,6 +17,12 @@ def model_create(request) :
     new_Pofol.title = request.POST['title']
     new_Pofol.body = request.POST['body']
     new_Pofol.pub_date = timezone.now()
+    # 실행할 코드 
+    try: 
+        new_Pofol.image=request.FILES['image']
+        # 예외 발생시 코드 
+    except: 
+        pass
     new_Pofol.save()
 
     return redirect('portfolio')
@@ -37,6 +43,12 @@ def model_edit(request, id):
     update_pofol.title = request.POST['title']
     update_pofol.body = request.POST['body']
     update_pofol.pub_date = timezone.now()
+    try: 
+        update_Pofol.image=request.FILES['image']
+        # 예외 발생시 코드 
+    except: 
+        pass
+
     update_pofol.save()
 
     return redirect('pofol_detail', update_pofol.id)

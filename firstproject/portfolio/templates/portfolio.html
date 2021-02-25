@@ -7,6 +7,7 @@
     </a>
     {% for pofol in pofols %}
         <h1>{{pofol.title}}</h1>
+        <p><img height="100px" width="100px" src= "{{pofol.image.url}}"></p>
         <a href = "{% url 'pofol_detail' pofol.id %}">
             <p>{{pofol.body}}</p>
         </a>
